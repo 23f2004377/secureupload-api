@@ -91,12 +91,19 @@ async def upload_file(
             "categoryCounts": category_counts
         })
 
-    # Non-CSV allowed but not analyzed
     return JSONResponse(content={
         "email": EMAIL,
         "filename": filename,
         "message": "File accepted"
     })
+
+
+# --------------------------------------------------
+# OPTIONS PREFLIGHT HANDLER (THIS WAS MISSING)
+# --------------------------------------------------
+@app.options("/upload")
+async def upload_options():
+    return Response(status_code=200)
 
 
 # --------------------------------------------------
