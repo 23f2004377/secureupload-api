@@ -1,5 +1,8 @@
 import requests
 
+BASE = "https://secureupload-api-2iv3.onrender.com/"
+
+
 # Simple connectivity test
 try:
     r = requests.get("http://127.0.0.1:9000/docs")
